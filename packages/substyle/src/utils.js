@@ -3,7 +3,17 @@ export const keys = obj => {
 }
 
 export const values = obj => {
-  return obj === Object(obj) ? Object.values(obj) : []
+  //Update - 29th Oct 2019
+  //Removed by Robins Gupta..Electron browser and old browser
+  //return obj === Object(obj) ? Object.values(obj) : []
+  if(obj === Object(obj)){
+    const vals = Object.keys(obj).map(function (key) {
+      return obj[key];
+    });
+    return vals;
+  }else{
+    return []
+  }
 }
 
 function mergeDeep(target, source) {
