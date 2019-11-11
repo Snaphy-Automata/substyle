@@ -63,25 +63,30 @@ const createDefaultStyle = (
 
       return (
         <EnhancerConsumer>
-          {({ enhancer, propsDecorator }) => {
-            const EnhancedWrappedComponent = this.getWrappedComponent(enhancer)
-            const substyle = this.getSubstyle(
-              { style, className, classNames },
-              propsDecorator
-            )
+          {(props) => {
+            const { enhancer, propsDecorator } = props;
+            if(props){
+              const EnhancedWrappedComponent = this.getWrappedComponent(enhancer)
+              const substyle = this.getSubstyle(
+                { style, className, classNames },
+                propsDecorator
+              )
 
-            return (
-              <EnhancedWrappedComponent
-                style={substyle(modifiers, this.defaultStyle || defaultStyle)}
-                ref={
-                  isStatelessFunction(EnhancedWrappedComponent)
-                    ? undefined
-                    : // $FlowFixMe
-                      this.setWrappedInstance
-                }
-                {...rest}
-              />
-            )
+              return (
+                <EnhancedWrappedComponent
+                  style={substyle(modifiers, this.defaultStyle || defaultStyle)}
+                  ref={
+                    isStatelessFunction(EnhancedWrappedComponent)
+                      ? undefined
+                      : // $FlowFixMe
+                        this.setWrappedInstance
+                  }
+                  {...rest}
+                />
+              )
+            }else{
+              return null;
+            }
           }}
         </EnhancerConsumer>
       )
