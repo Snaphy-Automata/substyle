@@ -64,8 +64,8 @@ const createDefaultStyle = (
       return (
         <EnhancerConsumer>
           {(props) => {
-            const { enhancer, propsDecorator } = props;
             if(props){
+              const { enhancer, propsDecorator } = props;
               const EnhancedWrappedComponent = this.getWrappedComponent(enhancer)
               const substyle = this.getSubstyle(
                 { style, className, classNames },
