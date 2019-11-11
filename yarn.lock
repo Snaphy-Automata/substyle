@@ -10150,6 +10150,17 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
+substyle@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/substyle/-/substyle-7.1.1.tgz#6d88f1b102504550e18f1dca0c1509e59df9a8ea"
+  integrity sha512-iY7CVuYuqXA6EqTBwdxCxlNVJWBSvdN5viyJrTOJAyGlwm7o4FRmrGN4aZCLLlvtKkUvm/xNzzzt5ys05U7cUQ==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
+    hoist-non-react-statics "^3.1.0"
+    invariant "^2.2.4"
+    prop-types "^15.5.8"
+    warning "^2.1.0"
+
 supports-color@6.1.0, supports-color@^6.0.0, supports-color@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-6.1.0.tgz#0764abc69c63d5ac842dd4867e8d025e880df8f3"
